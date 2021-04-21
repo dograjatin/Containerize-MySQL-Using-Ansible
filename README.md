@@ -1,5 +1,6 @@
-Documentation: 
-1. Development environment version table:
+Documentation
+
+a) Development environment version table:
     i) vmware workstation/virtual box version: vmware workstation 
     ii) OS version:
         NAME = "CentOS Linux"
