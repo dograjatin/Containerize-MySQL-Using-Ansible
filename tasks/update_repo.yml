@@ -1,0 +1,6 @@
+- 
+  name: Updating Repository
+  shell: 'yum update -y' 
+  args:
+    warn: no
+  

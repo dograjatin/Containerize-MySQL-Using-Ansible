@@ -1,0 +1,37 @@
+- 
+  name: Installing Pre-Requisite Packages
+  yum:
+    name: "{{item}}"
+    state: latest
+  loop:
+    - python3
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+
+- 
+  name: Add Docker CE Repository
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+- 
+  name: Install Docker
+  yum: 
+    name: "{{ item }}"
+    state: present
+  loop:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+
+- 
+  name: Start Docker Service
+  service: 
+    name: docker
+    state: started
+
+- 
+  name: Installing Python Lib from Docker-Ansible
+  pip:
+    name: docker
+    state: present

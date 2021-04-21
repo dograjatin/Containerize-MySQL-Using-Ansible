@@ -1,0 +1,14 @@
+ - 
+  name: "Launch Database container"
+  docker_container:
+    name: "{{ mysql_container_name }}"
+    image: "{{ mysql_image }}"
+    volumes:
+      - "{{ local_db_bind_volume }}:/var/lib/mysql"
+    restart: true
+    env:
+      MYSQL_ROOT_PASSWORD: "{{ db_root_password }}"
+      MYSQL_DATABASE: "{{ database_name }}"
+      MYSQL_USER: "{{ db_User }}"
+      MYSQL_PASSWORD: "{{ db_password }}"
+        

@@ -1,0 +1,40 @@
+- 
+  name: Stop Docker Service
+  service: 
+    name: docker
+    state: stopped
+
+- 
+  name: Remove Docker
+  yum: 
+    name: "{{ item }}"
+    state: absent
+    autoremove: yes
+  loop:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+- 
+  name: Remove Docker CE Repository
+  shell: rm docker-ce.repo
+  args:
+    chdir: /etc/yum.repos.d
+  become: yes
+
+- 
+  name: Removing Pre-Requisite Packages
+  yum:
+    name: "{{item}}"
+    state: absent
+    autoremove: yes
+  loop:
+    - python3
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+
+- 
+  name: Removing Python Lib from Docker-Ansible
+  pip:
+    name: docker
+    state: absent

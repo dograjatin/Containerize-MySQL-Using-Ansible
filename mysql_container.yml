@@ -1,0 +1,8 @@
+- 
+  name: Containerize Deployed MySQL in VM to Container
+  hosts: target2
+  become: true
+  tasks:
+    - include: tasks/update_repo.yml
+    - include: tasks/add_docker.yml
+    - include: tasks/run_mysql_docker_container.yml

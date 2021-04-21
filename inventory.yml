@@ -1,0 +1,6 @@
+target1 ansible_host=192.168.1.12 ansible_connection=ssh ansible_user=root ansible_ssh_pass=Password@123
+target2 ansible_host=192.168.1.10 ansible_connection=ssh ansible_user=root ansible_ssh_pass=Password@123
+
+[targets]
+target1
+target2

@@ -1,0 +1,7 @@
+mysql_container_name: mysql_server_container
+mysql_image: mysql/mysql-server:latest
+db_root_password: Password
+database_name: test_db
+db_User: db_user1
+db_password: Password
+local_db_bind_volume: /opt/var/mysql_data
