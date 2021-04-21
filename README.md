@@ -1,4 +1,3 @@
-# Containerize-MySQL-Using-Ansible
 Documentation: 
 1. Development environment version table:
     i) vmware workstation/virtual box version: vmware workstation 
@@ -40,7 +39,6 @@ c) Detailed manual steps for installing the application. It  should include:
                   
     ii)  The files that will get created or changed
          - MySQL Bind Volume at /opt/var/mysql_data
-
 
 d) Detailed manual steps for rollback.
     i) package that will be removed. 
